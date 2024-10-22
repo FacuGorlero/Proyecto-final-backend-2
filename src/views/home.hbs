@@ -1,0 +1,15 @@
+<main>
+    <header>
+        <h3 class="text-center">You can find all products</h3>
+    </header>
+    <div class="items-product">
+        <ul>
+            {{#each docs}}
+            <li>Title: {{this.title}}</li>
+            <li>Price: ${{this.price}}</li>
+            <li>Stock: {{this.stock}}</li>
+            <hr>
+            {{/each}}
+        </ul>
+    </div>
+</main>

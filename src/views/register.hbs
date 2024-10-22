@@ -1,0 +1,17 @@
+<section class="section_account">
+    <h1>Create new account</h1>
+
+    <form action="/api/session/register" method="POST" class="form-group">
+        <input type="text" name="first_name" placeholder="First Name">
+        <input type="text" name="last_name" placeholder="Last Name">
+        <input type="date" name="date" placeholder="Date">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <select name="role" placeholder="Select an option">
+            <option value="" selected>Select one</option>
+            <option value="user">user</option>
+            <option value="admin">admin</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+</section>

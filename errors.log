@@ -1,0 +1,133 @@
+
+error: This cart does not exist
+error: This cart does not exist
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\profiles\\65e7267757ef4b1ab7ad7893-1714946877080-a.jpg","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\profiles\\65e7267757ef4b1ab7ad7893-1714946922020-a.jpg","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\profiles\\65e7267757ef4b1ab7ad7893-1714948509045-a.jpg","storageErrors":[],"syscall":"open"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"styles.css\"","value":"styles.css","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"styles.css\"","value":"styles.css","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"styles.css\"","value":"styles.css","valueType":"string"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\profiles\\6637cf6d2b96dd411c881ff0-1714957936126-png-2702691_640.png","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\products\\6637cf6d2b96dd411c881ff0-1714958220514-64f3842a553ca472e5192ee5.png","storageErrors":[],"syscall":"open"}
+error: undefined {"storageErrors":[]}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\products\\6637cf6d2b96dd411c881ff0-1714958443059-pngtree-cartoon-astronauts-png-image_3171372.png","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\products\\6637cf6d2b96dd411c881ff0-1714958450047-pngtree-cartoon-astronauts-png-image_3171372.png","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\products\\6637cf6d2b96dd411c881ff0-1714958528511-descarga (1).jfif","storageErrors":[],"syscall":"open"}
+error: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Usuario\\Desktop\\Proyecto final Gorlero Facundo\\src\\public\\uploads\\products\\6637cf6d2b96dd411c881ff0-1714958581060-descarga (1).jfif","storageErrors":[],"syscall":"open"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"cause":"One or more properties were incomplete or not valid.\n        list of requires properties\n        - Product: product not found, recived [object Object]\n        - Product not added: can't add new product to database\n        - Product no deleted: not found a product to delete\n    ","code":3,"name":"Product to update error"}
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\":65849709bd6b685d106902d5\"","value":":65849709bd6b685d106902d5","valueType":"string"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined {"kind":"ObjectId","path":"_id","reason":{},"stringValue":"\"{cid}\"","value":"{cid}","valueType":"string"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: undefined
+error: undefined
+error: undefined
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: undefined
+error: Error adding product: One or more required properties are missing or invalid
+error: undefined
+error: Error adding product: One or more required properties are missing or invalid
+error: undefined
+error: Error adding product: One or more required properties are missing or invalid
+error: undefined
+error: Error adding product: One or more required properties are missing or invalid
+error: undefined
+error: Error adding product: One or more required properties are missing or invalid
+error: undefined
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: undefined
+error: Incorrect product: One of these properties is not valid
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Incorrect product: One of these properties is not valid
+error: Incorrect product: One of these properties is not valid
+error: undefined {"code":"ERR_HTTP_INVALID_STATUS_CODE"}
+error: undefined
+error: Error updating user password: mongoose is not defined {"stack":"ReferenceError: mongoose is not defined\n    at userDaoMongo.updatePassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\Daos-Mongo\\mongo\\user.daomongo.js:36:13)\n    at UserRepository.updateUserPassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\repositories\\user.repository.js:11:68)\n    at resetPassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\controller\\views.controller.js:223:36)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: Error updating password: mongoose is not defined {"stack":"ReferenceError: mongoose is not defined\n    at userDaoMongo.updatePassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\Daos-Mongo\\mongo\\user.daomongo.js:36:13)\n    at UserRepository.updateUserPassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\repositories\\user.repository.js:11:68)\n    at resetPassword (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\controller\\views.controller.js:223:36)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error during user login: Cannot read properties of null (reading 'email') {"stack":"TypeError: Cannot read properties of null (reading 'email')\n    at login (C:\\Users\\Usuario\\Desktop\\tp final backend -\\src\\controller\\session.controller.js:95:19)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"admin\" (type string) at path \"owner\" because of \"BSONError\"","name":"CastError","path":"owner","reason":{},"stringValue":"\"admin\"","value":"admin","valueType":"string"}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined {"_message":"products validation failed","errors":{"owner":{"kind":"required","message":"Path `owner` is required.","name":"ValidatorError","path":"owner","properties":{"message":"Path `owner` is required.","path":"owner","type":"required","value":null},"value":null}}}
+error: undefined
+error: undefined
+error: Error during user registration: users validation failed: role: Path `role` is required. {"_message":"users validation failed","errors":{"role":{"kind":"required","message":"Path `role` is required.","name":"ValidatorError","path":"role","properties":{"message":"Path `role` is required.","path":"role","type":"required","value":""},"value":""}},"stack":"ValidationError: users validation failed: role: Path `role` is required.\n    at model.Document.invalidate (C:\\Users\\Usuario\\Desktop\\tp final backend -\\node_modules\\mongoose\\lib\\document.js:3289:32)\n    at C:\\Users\\Usuario\\Desktop\\tp final backend -\\node_modules\\mongoose\\lib\\document.js:3050:17\n    at C:\\Users\\Usuario\\Desktop\\tp final backend -\\node_modules\\mongoose\\lib\\schemaType.js:1388:9\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
