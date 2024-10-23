@@ -47,38 +47,52 @@ class productDaoMongo {
     }
 
 
-    async get({ limit = 10, page = 1, sort, query } = {}) {
-        const filter = { isActive: true };
+    async get({ limit = 10, page, sort, query, category, availability } = {}) {
+        try {
+            const filter = { isActive: true };
     
-        if (query) {
-            filter.$or = [
-                { title: { $regex: query, $options: 'i' } },
-                { description: { $regex: query, $options: 'i' } },
-                { category: { $regex: query, $options: 'i' } }
-            ];
+            if (query) {
+                filter.$or = [
+                    { title: { $regex: query, $options: 'i' } },
+                    { description: { $regex: query, $options: 'i' } },
+                    { category: { $regex: query, $options: 'i' } }
+                ];
+            }
+    
+            if (category) {
+                filter.category = category;
+            }
+    
+            if (availability) {
+                filter.stock = { $gt: 0 };
+            }
+    
+            const options = {
+                limit: parseInt(limit, 10) || 10,
+                page: parseInt(page, 10) || 1,
+                sort: sort ? { price: sort === 'asc' ? 1 : -1 } : undefined,
+                lean: true
+            };
+    
+            logger.info(`Query: ${JSON.stringify(filter)}, Options: ${JSON.stringify(options)}`); // Agregar logging
+    
+            const result = await this.model.paginate(filter, options);
+    
+            return {
+                docs: result.docs,
+                hasPrevPage: result.hasPrevPage,
+                hasNextPage: result.hasNextPage,
+                prevPage: result.prevPage,
+                nextPage: result.nextPage,
+                page: result.page,
+                totalPages: result.totalPages // Devuelve totalPages
+            };
+        } catch (error) {
+            logger.error("Error in DAO get method:", error); // Log completo del error
+            throw new Error('Error retrieving products');
         }
-    
-        const options = {
-            limit: parseInt(limit, 10) || 10, // Asegúrate de que limit tenga un valor
-        page: parseInt(page, 10) || 1, // Asegúrate de que page tenga un valor
-        sort: sort ? { price: sort === 'asc' ? 1 : -1 } : undefined,
-        lean: true
-        };
-        
-    
-        logger.info(`Pagination: limit = ${options.limit}, page = ${options.page}`);
-    
-        const result = await this.model.paginate(filter, options);
-    
-        return {
-            docs: result.docs,
-        hasPrevPage: result.hasPrevPage,
-        hasNextPage: result.hasNextPage,
-        prevPage: result.prevPage,
-        nextPage: result.nextPage,
-        page: result.page //// Agrega esta línea para devolver información adicional
-        };
     }
+
     
     async getById(pid){
         const product = await this.model.findOne({ _id: pid }).lean()

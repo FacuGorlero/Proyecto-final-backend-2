@@ -131,3 +131,19 @@ error: undefined
 error: undefined
 error: undefined
 error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: undefined
+error: Error in products view controller: this.productViewService.getCategorys is not a function {"stack":"TypeError: this.productViewService.getCategorys is not a function\n    at products (C:\\Users\\Usuario\\Desktop\\tp final gorlero\\src\\controller\\views.controller.js:142:53)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}

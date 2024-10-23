@@ -76,43 +76,80 @@ class ViewsController {
 
   products = async (req, res) => {
     try {
-        const { limit = 10, page = 1, sort, query } = req.query;
+        let { limit = 10, page, sort, category, availability = true } = req.query;
 
-        // Convirtiendo limit y page a números enteros
-        const parsedLimit = parseInt(limit, 10) || 10;
-        const parsedPage = parseInt(page, 10) || 1; // Asegúrate de usar `page` correctamente
+        availability = availability === "true" || availability === true; // Normalizar availability
 
-        const userId = req.session && req.session.user ? req.session.user.user : null;
+        const filters = {
+            limit: parseInt(limit, 10),
+            page: parseInt(page, 10) || 1,
+            query: {}
+        };
 
-        logger.info(`User ID: ${userId}`);
-        const user = await this.userViewService.getUserBy({ _id: userId });
+        if (category) {
+            filters.category = category;
+        }
+        if (availability) {
+            filters.availability = availability;
+        }
+        if (sort) {
+            filters.sort = sort;
+        }
 
-        // Registro de la página solicitada
-        logger.info(`Page in req.query: ${parsedPage}`);
+        logger.info(`Filters: ${JSON.stringify(filters)}`); // Agregar logging para verificar los filtros
 
-        const { docs, hasPrevPage, hasNextPage, prevPage, nextPage, page: currentPage } = await this.productViewService.getProducts({
-            limit: parsedLimit,
-            page: parsedPage, // Pasar el número de página correctamente
-            sort,
-            query
-        });
+        // Llamamos al servicio de productos con los filtros
+        let resp = await this.productViewService.getProducts(filters);
 
+        // Verificar que la página solicitada esté dentro de los límites
+        if (filters.page > resp.totalPages) {
+            filters.page = resp.totalPages;
+            resp = await this.productViewService.getProducts(filters);
+        } else if (filters.page < 1) {
+            filters.page = 1;
+            resp = await this.productViewService.getProducts(filters);
+        }
+
+        let productError = false;
+        if (resp.docs.length === 0) {
+            productError = true;
+        }
+
+        // Filtrar la URL eliminando ciertos parámetros
+        let workingUrl = req.url.split('?')[1];
+        let arrayString = workingUrl ? workingUrl.split('&') : [];
+
+        function filterUrl(array, filter) {
+            array = array.filter(elm => elm.split('=')[0] !== filter && elm.split('=')[0] !== 'page');
+            return array.length === 0 ? '/products?' : `/products?${array.join('&')}&`;
+        }
+
+        const url = filterUrl(arrayString, 'category');
+
+        // Renderizar la vista con los productos y datos de paginación
         res.render('productsView', {
             title: 'Products View',
-            user,
-            docs,
-            hasPrevPage,
-            hasNextPage,
-            prevPage,
-            nextPage,
-            page: currentPage // Asegúrate de pasar la página actual a la vista
+            user: req.session.user,
+            productError,
+            docs: resp.docs,
+            page: resp.page,
+            totalPages: resp.totalPages,
+            hasPrevPage: resp.hasPrevPage,
+            hasNextPage: resp.hasNextPage,
+            prevPage: resp.prevPage,
+            nextPage: resp.nextPage,
+            limit: filters.limit, // Pasar el límite a la vista
+            ascend: `${filterUrl(arrayString, 'sort')}sort=asc`,
+            descend: `${filterUrl(arrayString, 'sort')}sort=desc`,
+            availability: `${filterUrl(arrayString, 'availability')}availability=false`,
+            unavailability: `${filterUrl(arrayString, 'availability')}availability=true`,
+            url
         });
     } catch (err) {
-        logger.error(err);
+        logger.error("Error in products view controller:", err); // Log completo del error
         res.status(500).send({ message: 'Server error' });
     }
-}
-
+};
 
 
   productsDetails = async (req,res) =>{
@@ -145,7 +182,7 @@ class ViewsController {
       res.render('register')
   }
 
-  current
+  
 
   shoppingCart = async(req, res) => {
       try {

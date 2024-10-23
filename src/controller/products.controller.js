@@ -15,28 +15,32 @@ class ProdcutsController {
 
   getProducts = async (req, res) => {
     try {
-        // Loguear los parámetros de consulta
-        console.log("Query Parameters:", req.query);
+        const filters = {
+            limit: req.query.limit || 10,
+            page: req.query.page || 1,
+            category: req.query.category,
+            availability: req.query.availability === "true" || req.query.availability === true,
+            sort: req.query.sort
+        };
 
-        const { limit = 10, page = 1, sort, query } = req.query;
-
-        // Llamando al servicio con los parámetros adecuados
-        const products = await this.productService.getProducts({
-            limit: parseInt(limit, 10),
-            page: parseInt(page, 10),
-            sort,
-            query
-        });
+        const products = await this.productService.getProducts(filters);
 
         return res.json({
             status: 'success',
-            payload: products,
+            payload: products.docs,
+            totalPages: products.totalPages,
+            prevPage: products.prevPage,
+            nextPage: products.nextPage,
+            page: products.page,
+            hasPrevPage: products.hasPrevPage,
+            hasNextPage: products.hasNextPage
         });
     } catch (error) {
         console.error("Error in getProducts:", error);
         res.status(500).send('Server error');
     }
-}
+};
+
 
 
 

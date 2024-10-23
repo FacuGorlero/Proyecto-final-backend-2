@@ -10,7 +10,7 @@
             </div>
         {{else}}
             <div class="welcome">
-                <p>Welcome {{user.first_name}} {{user.last_name}} , enjoy shopping!</p>
+                <p>Welcome {{user.first_name}} {{user.last_name}}, enjoy shopping!</p>
             </div>
         {{/eq}}
     {{/if}}
@@ -26,15 +26,13 @@
         </ul>
     </div>
     
-  <div class="text-center" style="margin-top: 20px">
-    {{#if hasPrevPage}}
-        <a href="/products?limit={{limit}}&page={{prevPage}}" class="btn btn-dark" style="margin-right: 10px">Prev</a>
-    {{/if}}
-    <span class="page-number" style="margin-right: 10px">{{page}}</span>
-    {{#if hasNextPage}}
-        <a href="/products?limit={{limit}}&page={{nextPage}}" class="btn btn-dark">Next</a>
-    {{/if}}
-</div>
-
-
+    <div class="text-center" style="margin-top: 20px">
+        {{#if hasPrevPage}}
+            <a href="/products?limit={{limit}}&page={{prevPage}}" class="btn btn-dark" style="margin-right: 10px">Prev</a>
+        {{/if}}
+        <span class="page-number" style="margin-right: 10px">{{page}}</span>
+        {{#if hasNextPage}}
+            <a href="/products?limit={{limit}}&page={{nextPage}}" class="btn btn-dark">Next</a>
+        {{/if}}
+    </div>
 </main>
