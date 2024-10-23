@@ -13,28 +13,37 @@ class ViewsController {
   }
 
   home = async (req, res) => {
-      try{
-          const { limit, pageNumber, sort, query } = req.query
-          const parsedLimit = limit ? parseInt(limit, 10) : 10
-          const userId = req.session && req.session.user ? req.session.user.user : null
-          const user = await this.userViewService.getUserBy({ _id: userId })
-          const { docs, hasPrevPage, hasNextPage, prevPage, nextPage, page } = await this.productViewService.getProducts({ limit: parsedLimit, pageNumber, sort, query })
-          //console.log(docs)
-          res.render('home', {
-              title: 'Home',
-              user,
-              docs,
-              hasPrevPage,
-              hasNextPage,
-              prevPage,
-              nextPage,
-              page
-          })
-      }catch(err){
-          logger.error(err)
-          res.status(500).send({message:'Server error'})
-      }
-  }
+    try {
+        const { limit, pageNumber, sort, query } = req.query;
+        const parsedLimit = limit ? parseInt(limit, 10) : 10;
+        const parsedPageNumber = pageNumber ? parseInt(pageNumber, 10) : 1; // Asegúrate de convertir a número
+
+        const userId = req.session && req.session.user ? req.session.user.user : null;
+        const user = await this.userViewService.getUserBy({ _id: userId });
+
+        const { docs, hasPrevPage, hasNextPage, prevPage, nextPage, page } = await this.productViewService.getProducts({
+            limit: parsedLimit,
+            page: parsedPageNumber, // Usa parsedPageNumber aquí
+            sort,
+            query
+        });
+
+        res.render('home', {
+            title: 'Home',
+            user,
+            docs,
+            hasPrevPage,
+            hasNextPage,
+            prevPage,
+            nextPage,
+            page
+        });
+    } catch (err) {
+        logger.error(err);
+        res.status(500).send({ message: 'Server error' });
+    }
+};
+
 
   realTimeProducts = async (req, res) => {
       try{

@@ -178,19 +178,21 @@ class SessionController {
       }
   }
 
-  current = (req,res) => {
-      if (req.user) {
-          const { first_name, last_name, role } = req.user
-          const userDTO = {
-              first_name: first_name,
-              last_name: last_name,
-              role: role
-          }
-          res.json(userDTO)
-      } else {
-          res.status(401).json({ error: "Unauthorized" })
-      }
-  }
+  current = (req, res) => {
+    console.log('Current function reached'); // Debug log
+    if (req.user) {
+        const { first_name, last_name, role } = req.user;
+        const userDTO = {
+            first_name: first_name,
+            last_name: last_name,
+            role: role
+        };
+        res.json(userDTO);
+    } else {
+        res.status(401).json({ error: "Unauthorized" });
+    }
+}
+
 
   github = async (req,res)=>{}
 
