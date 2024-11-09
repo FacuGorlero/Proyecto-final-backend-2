@@ -1,5 +1,5 @@
 const { Server } = require('socket.io')
-const MessageController = require('../controller/message.controller.js')
+
 const ProdcutsController = require('../controller/products.controller.js')
 const { logger } = require('../utils/logger.js')
 
@@ -7,7 +7,6 @@ function configureSocketIO(serverHttp) {
     /* The code block is setting up a WebSocket server using Socket.IO. */
         const io = new Server(serverHttp)
         const productsController = new ProdcutsController()
-        const messageController = new MessageController()
     
         io.on('connection', socket => {
             logger.info('New client connection')

@@ -3,7 +3,6 @@ const { configObject } = require("../config/index.js");
 let UserDao
 let ProductDao
 let CartDao
-let MessageDao
 let ProductFile
 let CartFile
 
@@ -20,8 +19,6 @@ switch (configObject.persistence) {
         const CartDaoMongo = require('./mongo/cart.daomongo')
         CartDao = CartDaoMongo
 
-        const MessageDaoMongo = require('./mongo/message.daomongo')
-        MessageDao = MessageDaoMongo
         break;
 
     case 'FILE':
@@ -42,7 +39,6 @@ module.exports = {
     UserDao,
     ProductDao,
     CartDao,
-    MessageDao,
     ProductFile,
     CartFile,
 }
